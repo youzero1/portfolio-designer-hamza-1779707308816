@@ -1,6 +1,8 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 COPY package.json ./
+# Remove any stale lockfile to ensure fresh resolution with overrides
+RUN rm -f package-lock.json
 RUN npm install --legacy-peer-deps
 COPY . .
 # Vite inlines VITE_* at build time — set in Coolify as build-time env / build args

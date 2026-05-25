@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import clsx from 'clsx';
+import Avatar from '@/components/Avatar';
 
 const links = [
   { to: '/', label: 'Home' },
@@ -10,14 +11,17 @@ const links = [
   { to: '/contact', label: 'Contact' },
 ];
 
+const AVATAR_SRC =
+  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80';
+
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-[var(--color-bg)]/70 border-b border-[var(--color-border)]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-accent)] group-hover:scale-110 transition" />
+        <Link to="/" className="flex items-center gap-2.5 group">
+          <Avatar src={AVATAR_SRC} alt="Mira Kovac" size="sm" className="w-8 h-8" status />
           <span className="font-semibold tracking-tight">Mira Kovac<span className="text-[var(--color-muted)]">©</span></span>
         </Link>
 

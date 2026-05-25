@@ -2,7 +2,11 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight, ArrowDown, Star } from 'lucide-react';
 import ProjectCard from '@/components/ProjectCard';
 import Marquee from '@/components/Marquee';
+import Avatar from '@/components/Avatar';
 import { projects, services, clients } from '@/lib/data';
+
+const AVATAR_SRC =
+  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80';
 
 export default function Home() {
   return (
@@ -28,9 +32,12 @@ export default function Home() {
         </h1>
 
         <div className="mt-16 flex flex-col md:flex-row md:items-end md:justify-between gap-10">
-          <p className="max-w-md text-[var(--color-muted)] leading-relaxed">
-            I'm <span className="text-[var(--color-ink)]">Mira Kovac</span>, a multidisciplinary designer based in Berlin. I help startups and studios craft identities, products, and digital experiences with clarity and craft.
-          </p>
+          <div className="flex items-start gap-4 max-w-md">
+            <Avatar src={AVATAR_SRC} alt="Mira Kovac" size="lg" status />
+            <p className="text-[var(--color-muted)] leading-relaxed">
+              I'm <span className="text-[var(--color-ink)]">Mira Kovac</span>, a multidisciplinary designer based in Berlin. I help startups and studios craft identities, products, and digital experiences with clarity and craft.
+            </p>
+          </div>
 
           <div className="flex items-center gap-4">
             <Link
@@ -130,7 +137,7 @@ export default function Home() {
             "Working with Mira was the best design decision we made all year. The brand finally feels like <span className="italic">us</span> — clear, confident, and a little bit weird."
           </p>
           <div className="mt-10 flex items-center gap-4">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80" alt="" className="w-12 h-12 rounded-full object-cover" />
+            <Avatar src={AVATAR_SRC} alt="Elena Park" size="sm" ring={false} />
             <div>
               <p className="font-medium">Elena Park</p>
               <p className="text-sm text-[var(--color-muted)]">CEO, Northwind Co.</p>

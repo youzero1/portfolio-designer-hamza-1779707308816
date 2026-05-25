@@ -1,5 +1,9 @@
 import { experiences } from '@/lib/data';
 import { Download } from 'lucide-react';
+import Avatar from '@/components/Avatar';
+
+const AVATAR_SRC =
+  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80';
 
 export default function About() {
   return (
@@ -10,6 +14,15 @@ export default function About() {
           <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-[0.95]">
             Designer with a <span className="italic font-light text-[var(--color-accent)]">developer's mind</span>.
           </h1>
+
+          <div className="mt-8 flex items-center gap-4">
+            <Avatar src={AVATAR_SRC} alt="Mira Kovac" size="md" status />
+            <div>
+              <p className="font-medium">Mira Kovac</p>
+              <p className="text-sm text-[var(--color-muted)]">Available for new projects</p>
+            </div>
+          </div>
+
           <div className="mt-10 space-y-6 text-lg text-[var(--color-muted)] leading-relaxed max-w-2xl">
             <p>
               I've spent the last eight years designing brands and shipping products for early-stage startups, studios, and cultural institutions across Europe and the US.
@@ -34,7 +47,7 @@ export default function About() {
           <div className="sticky top-24">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-[var(--color-border)]">
               <img
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80"
+                src={AVATAR_SRC}
                 alt="Portrait"
                 className="w-full h-full object-cover"
               />

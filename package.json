@@ -30,6 +30,13 @@
     "@vitejs/plugin-react": "4.3.4",
     "@tailwindcss/vite": "4.0.0",
     "tailwindcss": "4.0.0",
-    "rollup": "4.34.9"
+    "rollup": "4.34.9",
+    "@rollup/rollup-linux-x64-gnu": "4.34.9",
+    "@rollup/rollup-linux-x64-musl": "4.34.9",
+    "@rollup/rollup-linux-arm64-gnu": "4.34.9",
+    "@rollup/rollup-linux-arm64-musl": "4.34.9",
+    "@rollup/rollup-darwin-arm64": "4.34.9",
+    "@rollup/rollup-darwin-x64": "4.34.9",
+    "@rollup/rollup-win32-x64-msvc": "4.34.9"
   }
 }
